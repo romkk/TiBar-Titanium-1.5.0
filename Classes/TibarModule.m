@@ -94,6 +94,17 @@
     [reader release];
     reader = [NSClassFromString(clsName) new];
     reader.readerDelegate = self;
+	
+	// overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 440)];
+	
+	// NSString *path = [[NSBundle mainBundle] pathForResource:@"overlay" ofType:@"png"];
+	overlayImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"overlay.png"]];
+	// [overlayImage setFrame:CGRectMake(0,0,300,440)];
+	
+	// [overlayView addSubview:overlayImage];
+	
+	reader.cameraOverlayView = overlayImage;
+	
 }
 
 
@@ -323,23 +334,6 @@
 	
 	//if(!retry)
 	[_reader dismissModalViewControllerAnimated: YES];
-}
-
--(id)example:(id)args
-{
-	// example method
-	return @"hello world";
-}
-
--(id)exampleProp
-{
-	// example property getter
-	return @"hello world";
-}
-
--(void)exampleProp:(id)value
-{
-	// example property setter
 }
 
 @end

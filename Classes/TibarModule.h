@@ -17,6 +17,8 @@
 	
 	BOOL continuous;
 	
+	UIImageView *overlayImage;
+	
 }
 
 @end
